@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
 
+
+import Header from '../../containers/Header/Header'
 import { fetchCategories } from '../../../actions/categoryAction'
+// import getRoutes from '../../../routes'
+import CategoryContainer from '../CategoryContainer/CategoryContainer'
+import Home from '../../presentation/Home/Home'
 
 @connect((state) => ({
-  categories: state.categories || []
+  categories: state.categories
 }), { fetchCategories })
 export default class MainConatiner extends Component {
   componentWillMount() {
@@ -14,28 +20,15 @@ export default class MainConatiner extends Component {
   render() {
     const { categories } = this.props
     return (
-      <div>
-        <ul>
-          <li key="1">
-            <span>{'title'}</span>
-            <span>{'box_limit'}</span>
-            <span>{'hidden'}</span>
-            <span>{'recently_added'}</span>
-            <span>{'is_default'}</span>
-          </li>
-          {
-            categories.map((category) => (
-              <li key={category.id}>
-                <span>{category.title}</span>
-                <span>{category.box_limit}</span>
-                <span>{category.hidden ? 'true' : 'false' }</span>
-                <span>{category.recently_added ? 'true' : 'false' }</span>
-                <span>{category.is_default ? 'true' : 'false' }</span>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
+      <Router>
+        <div>
+          <Header categories={categories} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/category/:categoryId" component={CategoryContainer} />
+          </Switch>
+        </div>
+      </Router>
     )
   }
 }

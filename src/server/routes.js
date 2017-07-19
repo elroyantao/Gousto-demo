@@ -9,7 +9,7 @@ export default [
   },
   {
     method: 'GET',
-    path: '/',
+    path: '/{param*}',
     handler: serverSideRenderer
   }
 
