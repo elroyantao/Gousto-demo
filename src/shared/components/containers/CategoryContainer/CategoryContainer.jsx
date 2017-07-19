@@ -3,24 +3,43 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import ProductList from '../../presentation/ProductList/ProductList'
+import Search from '../../presentation/Search/Search'
+
+import { setSearchTerm, clearSearchTerm } from '../../../actions/searchTermAction'
 
 @connect((state) => ({
   categories: state.categories,
-  products: state.products
-}), {})
+  products: state.products,
+  searchTerm: state.searchTerm
+}), { setSearchTerm, clearSearchTerm })
 export default class CategoryContainer extends Component {
+
+  componentWillUpdate({ match: { params: { categoryId: newCategoryId } } }) {
+    const { match: { params: { categoryId } }, clearSearchTerm } = this.props
+    if (categoryId !== newCategoryId) clearSearchTerm()
+  }
+
   filterProducts() {
-    const { match, products } = this.props
+    const { match, products, searchTerm } = this.props
+    const search = searchTerm.toLowerCase()
+
     return products.filter((product) => {
-      return product.categories.some((category) => {
-        return category.id === match.params.categoryId
-      })
+      return this.matchSearch(product, search) &&
+        product.categories.some((category) => {
+          return category.id === match.params.categoryId
+        })
     })
+  }
+
+  matchSearch(product, search) {
+    return product.title.toLowerCase().includes(search)
+      || product.description.toLowerCase().includes(search)
+      || search === ''
   }
 
   render() {
     const products = this.filterProducts()
-    const { categories, match } = this.props
+    const { categories, match, searchTerm, setSearchTerm } = this.props
     const selectedCategory = categories && categories.find((category) =>
       category.id === match.params.categoryId
     )
@@ -28,6 +47,7 @@ export default class CategoryContainer extends Component {
     return (
       <div>
         <p>this is category {name}</p>
+        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <ProductList products={products} />
       </div>
     )
@@ -44,5 +64,8 @@ CategoryContainer.propTypes = {
     title: PropTypes.string
   })).isRequired,
   match: PropTypes.object,
-  products: PropTypes.array
+  products: PropTypes.array,
+  setSearchTerm: PropTypes.func,
+  clearSearchTerm: PropTypes.func,
+  searchTerm: PropTypes.string
 }
