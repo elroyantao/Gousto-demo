@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 import ProductList from '../../presentation/ProductList/ProductList'
 import Search from '../../presentation/Search/Search'
+import NoItemFound from '../../presentation/NoItemFound/NoItemFound'
 
 import { setSearchTerm, clearSearchTerm } from '../../../actions/searchTermAction'
 
@@ -48,7 +49,10 @@ export default class CategoryContainer extends Component {
       <div>
         <p>this is category {name}</p>
         <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        <ProductList products={products} />
+        { products.length ?
+          <ProductList products={products} /> :
+          <NoItemFound />
+        }
       </div>
     )
   }
