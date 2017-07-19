@@ -6,16 +6,19 @@ import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
 
 import Header from '../../containers/Header/Header'
 import { fetchCategories } from '../../../actions/categoryAction'
+import { fetchProducts } from '../../../actions/productAction'
 // import getRoutes from '../../../routes'
 import CategoryContainer from '../CategoryContainer/CategoryContainer'
 import Home from '../../presentation/Home/Home'
 
 @connect((state) => ({
   categories: state.categories
-}), { fetchCategories })
+}), { fetchCategories, fetchProducts })
 export default class MainConatiner extends Component {
   componentWillMount() {
-    this.props.fetchCategories()
+    const { fetchCategories, fetchProducts } = this.props
+    fetchCategories()
+    fetchProducts()
   }
   render() {
     const { categories } = this.props
@@ -42,5 +45,6 @@ MainConatiner.propTypes = {
     recently_added: PropTypes.bool,
     title: PropTypes.string
   })).isRequired,
-  fetchCategories: PropTypes.func.isRequired
+  fetchCategories: PropTypes.func.isRequired,
+  fetchProducts: PropTypes.func.isRequired
 }

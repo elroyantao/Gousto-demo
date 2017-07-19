@@ -1,5 +1,6 @@
 import serverSideRenderer from './handlers/server-side-renderer'
-import categoryHandler from './handlers/categoryHandler'
+import categoryHandler from './handlers/category-handler'
+import producthandler from './handlers/product-handler'
 
 export default [
   {
@@ -9,8 +10,12 @@ export default [
   },
   {
     method: 'GET',
+    path: '/api/products',
+    handler: producthandler
+  },
+  {
+    method: 'GET',
     path: '/{param*}',
     handler: serverSideRenderer
   }
-
 ]

@@ -2,11 +2,24 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
+import ProductList from '../../presentation/ProductList/ProductList'
+
 @connect((state) => ({
-  categories: state.categories
+  categories: state.categories,
+  products: state.products
 }), {})
 export default class CategoryContainer extends Component {
+  filterProducts() {
+    const { match, products } = this.props
+    return products.filter((product) => {
+      return product.categories.some((category) => {
+        return category.id === match.params.categoryId
+      })
+    })
+  }
+
   render() {
+    const products = this.filterProducts()
     const { categories, match } = this.props
     const selectedCategory = categories && categories.find((category) =>
       category.id === match.params.categoryId
@@ -15,6 +28,7 @@ export default class CategoryContainer extends Component {
     return (
       <div>
         <p>this is category {name}</p>
+        <ProductList products={products} />
       </div>
     )
   }
@@ -29,5 +43,6 @@ CategoryContainer.propTypes = {
     recently_added: PropTypes.bool,
     title: PropTypes.string
   })).isRequired,
-  match: PropTypes.object
+  match: PropTypes.object,
+  products: PropTypes.array
 }
