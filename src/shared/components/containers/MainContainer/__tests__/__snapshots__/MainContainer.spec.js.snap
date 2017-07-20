@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MainContainer/> @renders in default state 1`] = `
+<BrowserRouter>
+  <div>
+    <Header
+      categories={
+        Array [
+          Object {
+            "id": "1",
+            "title": "one",
+          },
+          Object {
+            "id": "2",
+            "title": "two",
+          },
+        ]
+      }
+    />
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        path="/category/:categoryId"
+      />
+    </Switch>
+  </div>
+</BrowserRouter>
+`;
+
+exports[`<MainContainer/> @renders when categories is empty 1`] = `
+<BrowserRouter>
+  <div>
+    <Header
+      categories={Array []}
+    />
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        path="/category/:categoryId"
+      />
+    </Switch>
+  </div>
+</BrowserRouter>
+`;

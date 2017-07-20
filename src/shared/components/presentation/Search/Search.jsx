@@ -3,8 +3,17 @@ import PropTypes from 'prop-types'
 
 
 export default class Search extends Component {
+  static propTypes = {
+    searchTerm: PropTypes.string.isRequired,
+    onSearch: PropTypes.func.isRequired
+  }
+
+  static defaultProps = {
+    searchTerm: ''
+  }
+
   handleChange = (event) => {
-    this.props.setSearchTerm(event.target.value)
+    this.props.onSearch(event.target.value)
   }
   render() {
     const { searchTerm } = this.props
@@ -18,9 +27,4 @@ export default class Search extends Component {
       </div>
     )
   }
-}
-
-Search.propTypes = {
-  searchTerm: PropTypes.string,
-  setSearchTerm: PropTypes.func
 }

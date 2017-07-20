@@ -3,18 +3,34 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
 
-
-import Header from '../../containers/Header/Header'
-import { fetchCategories } from '../../../actions/categoryAction'
-import { fetchProducts } from '../../../actions/productAction'
-// import getRoutes from '../../../routes'
+import Header from '../../presentation/Header/Header'
 import CategoryContainer from '../CategoryContainer/CategoryContainer'
 import Home from '../../presentation/Home/Home'
+
+import { fetchCategories } from '../../../actions/categoryAction'
+import { fetchProducts } from '../../../actions/productAction'
 
 @connect((state) => ({
   categories: state.categories
 }), { fetchCategories, fetchProducts })
-export default class MainConatiner extends Component {
+export default class MainContainer extends Component {
+  static propTypes = {
+    categories: PropTypes.arrayOf(PropTypes.shape({
+      box_limit: PropTypes.number,
+      hidden: PropTypes.bool,
+      id: PropTypes.string,
+      is_default: PropTypes.bool,
+      recently_added: PropTypes.bool,
+      title: PropTypes.string
+    })),
+    fetchCategories: PropTypes.func,
+    fetchProducts: PropTypes.func
+  }
+
+  static defaultProps = {
+    categories: []
+  }
+
   componentWillMount() {
     const { fetchCategories, fetchProducts } = this.props
     fetchCategories()
@@ -34,17 +50,4 @@ export default class MainConatiner extends Component {
       </Router>
     )
   }
-}
-
-MainConatiner.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.shape({
-    box_limit: PropTypes.number,
-    hidden: PropTypes.bool,
-    id: PropTypes.string,
-    is_default: PropTypes.bool,
-    recently_added: PropTypes.bool,
-    title: PropTypes.string
-  })).isRequired,
-  fetchCategories: PropTypes.func.isRequired,
-  fetchProducts: PropTypes.func.isRequired
 }

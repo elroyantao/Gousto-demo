@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductList/> @renders in default state 1`] = `
+<ul
+  className="ProductList"
+>
+  <Product
+    product={
+      Object {
+        "id": "1",
+      }
+    }
+  />
+  <Product
+    product={
+      Object {
+        "id": "2",
+      }
+    }
+  />
+  <Product
+    product={
+      Object {
+        "id": "3",
+      }
+    }
+  />
+  <Product
+    product={
+      Object {
+        "id": "4",
+      }
+    }
+  />
+</ul>
+`;
+
+exports[`<ProductList/> @renders with empty products 1`] = `
+<ul
+  className="ProductList"
+/>
+`;

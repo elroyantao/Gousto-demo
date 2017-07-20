@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import Helmet from 'react-helmet'
 
 import ProductList from '../../presentation/ProductList/ProductList'
 import Search from '../../presentation/Search/Search'
@@ -14,6 +15,27 @@ import { setSearchTerm, clearSearchTerm } from '../../../actions/searchTermActio
   searchTerm: state.searchTerm
 }), { setSearchTerm, clearSearchTerm })
 export default class CategoryContainer extends Component {
+  static propTypes = {
+    categories: PropTypes.arrayOf(PropTypes.shape({
+      box_limit: PropTypes.number,
+      hidden: PropTypes.bool,
+      id: PropTypes.string,
+      is_default: PropTypes.bool,
+      recently_added: PropTypes.bool,
+      title: PropTypes.string
+    })),
+    match: PropTypes.object,
+    products: PropTypes.array,
+    searchTerm: PropTypes.string,
+    setSearchTerm: PropTypes.func,
+    clearSearchTerm: PropTypes.func
+  }
+
+  static defaultProps = {
+    categories: [],
+    products: [],
+    searchTerm: ''
+  }
 
   componentWillUpdate({ match: { params: { categoryId: newCategoryId } } }) {
     const { match: { params: { categoryId } }, clearSearchTerm } = this.props
@@ -47,8 +69,8 @@ export default class CategoryContainer extends Component {
     const name = selectedCategory && selectedCategory.title
     return (
       <div>
-        <p>this is category {name}</p>
-        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <Helmet title={`Gousto - Category : ${name}`} />
+        <Search searchTerm={searchTerm} onSearch={setSearchTerm} />
         { products.length ?
           <ProductList products={products} /> :
           <NoItemFound />
@@ -56,20 +78,4 @@ export default class CategoryContainer extends Component {
       </div>
     )
   }
-}
-
-CategoryContainer.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.shape({
-    box_limit: PropTypes.number,
-    hidden: PropTypes.bool,
-    id: PropTypes.string,
-    is_default: PropTypes.bool,
-    recently_added: PropTypes.bool,
-    title: PropTypes.string
-  })).isRequired,
-  match: PropTypes.object,
-  products: PropTypes.array,
-  setSearchTerm: PropTypes.func,
-  clearSearchTerm: PropTypes.func,
-  searchTerm: PropTypes.string
 }

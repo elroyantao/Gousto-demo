@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CategoryContainer/> @renders in default state 1`] = `
+<div>
+  <HelmetWrapper
+    encodeSpecialCharacters={true}
+    title="Gousto - Category : one"
+  />
+  <Search
+    onSearch={[Function]}
+    searchTerm=""
+  />
+  <ProductList
+    products={
+      Array [
+        Object {
+          "categories": Array [
+            Object {
+              "id": "fake-id",
+            },
+          ],
+          "description": "description 1",
+          "id": "1",
+          "title": "title 1",
+        },
+        Object {
+          "categories": Array [
+            Object {
+              "id": "fake-id",
+            },
+          ],
+          "description": "description 3",
+          "id": "3",
+          "title": "title 3 search tItle",
+        },
+        Object {
+          "categories": Array [
+            Object {
+              "id": "fake-id",
+            },
+          ],
+          "description": "description 4 search description",
+          "id": "4",
+          "title": "title 4",
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`<CategoryContainer/> @renders when 1 products matches category and search matches description 1`] = `
+<div>
+  <HelmetWrapper
+    encodeSpecialCharacters={true}
+    title="Gousto - Category : one"
+  />
+  <Search
+    onSearch={[Function]}
+    searchTerm="search dEscription"
+  />
+  <ProductList
+    products={
+      Array [
+        Object {
+          "categories": Array [
+            Object {
+              "id": "fake-id",
+            },
+          ],
+          "description": "description 4 search description",
+          "id": "4",
+          "title": "title 4",
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`<CategoryContainer/> @renders when 1 products matches category and search matches title 1`] = `
+<div>
+  <HelmetWrapper
+    encodeSpecialCharacters={true}
+    title="Gousto - Category : one"
+  />
+  <Search
+    onSearch={[Function]}
+    searchTerm="search title"
+  />
+  <ProductList
+    products={
+      Array [
+        Object {
+          "categories": Array [
+            Object {
+              "id": "fake-id",
+            },
+          ],
+          "description": "description 3",
+          "id": "3",
+          "title": "title 3 search tItle",
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`<CategoryContainer/> @renders when no products for the matched category 1`] = `
+<div>
+  <HelmetWrapper
+    encodeSpecialCharacters={true}
+    title="Gousto - Category : No Products"
+  />
+  <Search
+    onSearch={[Function]}
+    searchTerm=""
+  />
+  <NoItemFound />
+</div>
+`;

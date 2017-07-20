@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Product/> @renders in default state 1`] = `
+<li
+  className="Product"
+>
+  <Accordion
+    header="this is the title"
+  >
+    <div
+      className="Product-body"
+    >
+      this is the description
+    </div>
+  </Accordion>
+</li>
+`;
+
+exports[`<Product/> @renders with empty product 1`] = `
+<li
+  className="Product"
+>
+  <Accordion>
+    <div
+      className="Product-body"
+    />
+  </Accordion>
+</li>
+`;

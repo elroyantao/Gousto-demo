@@ -7,7 +7,7 @@ export function getScripts() {
   const scripts = [
     'js/bundle.js'
   ]
-  return scripts.map(() => {
-    return `<script src="${isProd ? '/public/' : `http://localhost:${WDS_PORT}/public`}/js/bundle.js"></script>`
+  return scripts.map((script) => {
+    return `<script src="${isProd ? '/public/' : `http://localhost:${WDS_PORT}/public/`}${script}"></script>`
   })
 }

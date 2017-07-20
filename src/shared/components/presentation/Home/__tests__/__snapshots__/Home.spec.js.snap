@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home/> @renders in default state 1`] = `
+<div>
+  <HelmetWrapper
+    encodeSpecialCharacters={true}
+    title="Gousto - Home"
+  />
+  <p>
+     this is the home page
+  </p>
+</div>
+`;

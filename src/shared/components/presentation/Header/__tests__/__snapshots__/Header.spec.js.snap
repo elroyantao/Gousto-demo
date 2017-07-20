@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header/> @renders in default state 1`] = `
+<nav>
+  <NavLink
+    activeClassName="active"
+    activeStyle={
+      Object {
+        "color": "red",
+        "fontWeight": "bold",
+      }
+    }
+    to="/category/1"
+  >
+    one
+  </NavLink>
+  <NavLink
+    activeClassName="active"
+    activeStyle={
+      Object {
+        "color": "red",
+        "fontWeight": "bold",
+      }
+    }
+    to="/category/2"
+  >
+    two
+  </NavLink>
+</nav>
+`;
+
+exports[`<Header/> @renders with empty categories 1`] = `<nav />`;

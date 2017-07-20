@@ -1,18 +1,25 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import Accordion from '../Accordion/Accordion'
+
 export default class Product extends Component {
+  static propTypes = {
+    product: PropTypes.object.isRequired
+  }
+
+  static defaultProps = {
+    product: {}
+  }
+
   render() {
     const { product } = this.props
     return (
       <li className="Product">
-        <div className="Product-header">{product.title}</div>
-        <div className="Product-body">{product.description}</div>
+        <Accordion header={product.title}>
+          <div className="Product-body">{product.description}</div>
+        </Accordion>
       </li>
     )
   }
-}
-
-Product.propTypes = {
-  product: PropTypes.object
 }

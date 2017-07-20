@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Search/> @renders in default state 1`] = `
+<div>
+  <input
+    onChange={[Function]}
+    type="search"
+    value="fake term"
+  />
+</div>
+`;
+
+exports[`<Search/> @renders with empty searchTerm 1`] = `
+<div>
+  <input
+    onChange={[Function]}
+    type="search"
+    value=""
+  />
+</div>
+`;
