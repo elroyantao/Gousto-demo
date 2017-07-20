@@ -6,7 +6,7 @@ import handlebars from 'handlebars'
 import routes from './routes'
 
 const server = new Server()
-server.connection({ port: process.env.PORT || 3000, host: 'localhost' })
+server.connection({ port: process.env.PORT || 8080, host: 'localhost' })
 
 server.register([Vision, Inert], () => {
   server.views({

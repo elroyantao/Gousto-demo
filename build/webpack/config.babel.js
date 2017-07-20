@@ -23,8 +23,8 @@ export default {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-    new ExtractTextPlugin('style.css', { allChunks: true })
+    new webpack.NoEmitOnErrorsPlugin()
+    // new ExtractTextPlugin('style.css', { allChunks: true })
   ],
   module: {
     rules: [
