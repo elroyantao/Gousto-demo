@@ -7,11 +7,6 @@ exports[`<Accordion /> @renders in default state 1`] = `
   <div
     className="Accordion-header"
     onClick={[Function]}
-    style={
-      Object {
-        "cursor": "auto",
-      }
-    }
   >
     this is a header
   </div>
@@ -20,7 +15,6 @@ exports[`<Accordion /> @renders in default state 1`] = `
     style={
       Object {
         "maxHeight": 0,
-        "overflow": "hidden",
       }
     }
   />
@@ -32,13 +26,8 @@ exports[`<Accordion /> @renders when extended height is set and is expanded 1`] 
   className="Accordion"
 >
   <div
-    className="Accordion-header"
+    className="Accordion-header--open"
     onClick={[Function]}
-    style={
-      Object {
-        "cursor": "pointer",
-      }
-    }
   >
     this is a header
   </div>
@@ -47,7 +36,6 @@ exports[`<Accordion /> @renders when extended height is set and is expanded 1`] 
     style={
       Object {
         "maxHeight": 100,
-        "overflow": "hidden",
       }
     }
   >
@@ -69,11 +57,6 @@ exports[`<Accordion /> @renders when extended height is set and is not expanded 
   <div
     className="Accordion-header"
     onClick={[Function]}
-    style={
-      Object {
-        "cursor": "pointer",
-      }
-    }
   >
     this is a header
   </div>
@@ -82,7 +65,6 @@ exports[`<Accordion /> @renders when extended height is set and is not expanded 
     style={
       Object {
         "maxHeight": 0,
-        "overflow": "hidden",
       }
     }
   >
@@ -104,11 +86,6 @@ exports[`<Accordion /> @renders with child node 1`] = `
   <div
     className="Accordion-header"
     onClick={[Function]}
-    style={
-      Object {
-        "cursor": "pointer",
-      }
-    }
   >
     this is a header
   </div>
@@ -117,7 +94,6 @@ exports[`<Accordion /> @renders with child node 1`] = `
     style={
       Object {
         "maxHeight": 0,
-        "overflow": "hidden",
       }
     }
   >

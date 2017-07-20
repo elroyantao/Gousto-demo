@@ -1,0 +1,14 @@
+.Search {
+  padding: 20px;
+}
+.Search-input {
+  outline: none;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #645B57;
+  color: #645B57;
+}
+
+.Search-input::placeholder {
+  opacity: .7;
+}

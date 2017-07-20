@@ -12,6 +12,8 @@ import { fetchCategories } from '../../../actions/categoryAction'
 import { fetchProducts } from '../../../actions/productAction'
 import { resetApiError } from '../../../actions/errorAction'
 
+import styles from './MainContainer.css'
+
 @connect((state) => ({
   categories: state.categories,
   apiError: state.apiError

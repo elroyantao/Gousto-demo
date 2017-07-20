@@ -1,5 +1,8 @@
 import path from 'path'
 import webpack from 'webpack'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import postcssNext from 'postcss-cssnext'
+import postcssGray from 'postcss-color-gray'
 
 import { WDS_PORT } from '../../src/shared/config'
 
@@ -20,11 +23,39 @@ export default {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new ExtractTextPlugin('style.css', { allChunks: true })
   ],
   module: {
     rules: [
-      { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ }
+      {
+        test: /\.(js|jsx)$/,
+        use: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[name]__[local]___[hash:base64:5]'
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [
+                postcssNext,
+                postcssGray
+              ]
+            }
+          }
+        ]
+      }
     ]
   },
   devtool: 'source-maps',

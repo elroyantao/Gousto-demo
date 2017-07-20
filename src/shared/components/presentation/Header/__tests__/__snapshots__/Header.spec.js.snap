@@ -1,32 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Header/> @renders in default state 1`] = `
-<nav>
-  <NavLink
-    activeClassName="active"
-    activeStyle={
-      Object {
-        "color": "red",
-        "fontWeight": "bold",
-      }
-    }
-    to="/category/1"
+<section
+  className="Header"
+>
+  <div
+    className="Header-title"
   >
-    one
-  </NavLink>
-  <NavLink
-    activeClassName="active"
-    activeStyle={
-      Object {
-        "color": "red",
-        "fontWeight": "bold",
-      }
-    }
-    to="/category/2"
+     Gousto 
+  </div>
+  <nav
+    className="Header-nav"
   >
-    two
-  </NavLink>
-</nav>
+    <NavLink
+      activeClassName="Header-navItem--active"
+      className="Header-navItem"
+      to="/category/1"
+    >
+      one
+    </NavLink>
+    <NavLink
+      activeClassName="Header-navItem--active"
+      className="Header-navItem"
+      to="/category/2"
+    >
+      two
+    </NavLink>
+  </nav>
+</section>
 `;
 
-exports[`<Header/> @renders with empty categories 1`] = `<nav />`;
+exports[`<Header/> @renders with empty categories 1`] = `
+<section
+  className="Header"
+>
+  <div
+    className="Header-title"
+  >
+     Gousto 
+  </div>
+  <nav
+    className="Header-nav"
+  />
+</section>
+`;

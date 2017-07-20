@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import Accordion from '../Accordion/Accordion'
+import style from './Product.css'
 
 export default class Product extends Component {
   static propTypes = {
@@ -15,7 +16,7 @@ export default class Product extends Component {
   render() {
     const { product } = this.props
     return (
-      <li className="Product">
+      <li className={style.Product}>
         <Accordion header={product.title}>
           <div className="Product-body">{product.description}</div>
         </Accordion>

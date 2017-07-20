@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import styles from './Search.css'
 
 export default class Search extends Component {
   static propTypes = {
@@ -18,11 +19,13 @@ export default class Search extends Component {
   render() {
     const { searchTerm } = this.props
     return (
-      <div>
+      <div className={styles.Search}>
         <input
           type="search"
+          className={styles['Search-input']}
           value={searchTerm}
           onChange={this.handleChange}
+          placeholder="search product"
         />
       </div>
     )

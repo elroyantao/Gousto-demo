@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import styles from './Accordion.css'
+
 export default class Accordion extends Component {
   static propTypes = {
     header: PropTypes.string,
@@ -42,21 +44,20 @@ export default class Accordion extends Component {
     const { header, children } = this.props
     const { expandedHeight, expanded } = this.state
     return (
-      <div className="Accordion">
+      <div className={styles.Accordion}>
         <div
-          className="Accordion-header"
+          className={expanded ? styles['Accordion-header--open'] : styles['Accordion-header']}
           onClick={this.handleToggle}
-          style={{ cursor: children ? 'pointer' : 'auto' }}
         >
           { header }
         </div>
         <div
-          className="Accordion-wrapper"
+          className={styles['Accordion-wrapper']}
           ref={(element) => { this.accordionWrapper = element }}
-          style={{ maxHeight: expanded ? expandedHeight : 0, overflow: 'hidden' }}
+          style={{ maxHeight: expanded ? expandedHeight : 0 }}
         >
           { children &&
-            <div className="Accordion-content">
+            <div className={styles['Accordion-content']}>
               {children}
             </div>
           }

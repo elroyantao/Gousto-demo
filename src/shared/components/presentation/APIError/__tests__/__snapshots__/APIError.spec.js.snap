@@ -18,13 +18,13 @@ exports[`<APIError /> @renders in error state 1`] = `
       className="Modal-action"
     >
       <button
-        className="Modal-button Modal-button--close"
+        className="Modal-button--close"
         onClick={[Function]}
       >
         Close
       </button>
       <button
-        className="Modal-button Modal-button--reload"
+        className="Modal-button--reload"
         onClick={[Function]}
       >
         Reload

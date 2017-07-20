@@ -1,11 +1,13 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
+import styles from './Home.css'
+
 export default function Home() {
   return (
-    <div>
+    <div className={styles.Home}>
       <Helmet title="Gousto - Home" />
-      <p> this is the home page</p>
+      <p>Please select a category to continue</p>
     </div>
   )
 }

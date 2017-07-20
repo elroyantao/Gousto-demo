@@ -1,0 +1,30 @@
+:root {
+  --pagePadding: 10px;
+}
+
+.Accordion {
+  margin: 5px 0;
+
+  color: gray(85);
+}
+
+.Accordion-header {
+  cursor: pointer;
+  border-top: solid gray(80) 1px;
+  border-bottom: solid gray(80) 1px;
+  font-weight: bold;
+  padding: 5px var(--pagePadding);
+}
+
+.Accordion-header--open {
+  composes: Accordion-header;
+}
+
+.Accordion-wrapper {
+  overflow: hidden;
+  font-style: italic;
+}
+
+.Accordion-content {
+  padding: 5px var(--pagePadding);
+}

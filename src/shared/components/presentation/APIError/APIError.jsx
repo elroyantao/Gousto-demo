@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import styles from './APIError.css'
+
 export default class APIError extends Component {
   static propTypes = {
     hasError: PropTypes.bool,
@@ -15,16 +17,16 @@ export default class APIError extends Component {
     const { hasError, clearError } = this.props
     if (!hasError) return null
     return (
-      <div className="Overlay">
-        <div className="Modal">
-          <div className="Modal-content">
+      <div className={styles.Overlay}>
+        <div className={styles.Modal}>
+          <div className={styles['Modal-content']}>
             There was an error in the api call
           </div>
-          <div className="Modal-action">
-            <button className="Modal-button Modal-button--close" onClick={clearError}>
+          <div className={styles['Modal-action']}>
+            <button className={styles['Modal-button--close']} onClick={clearError}>
               Close
             </button>
-            <button className="Modal-button Modal-button--reload" onClick={this.reloadSite}>
+            <button className={styles['Modal-button--reload']} onClick={this.reloadSite}>
               Reload
             </button>
           </div>

@@ -1,9 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Search/> @renders in default state 1`] = `
-<div>
+<div
+  className="Search"
+>
   <input
+    className="Search-input"
     onChange={[Function]}
+    placeholder="search product"
     type="search"
     value="fake term"
   />
@@ -11,9 +15,13 @@ exports[`<Search/> @renders in default state 1`] = `
 `;
 
 exports[`<Search/> @renders with empty searchTerm 1`] = `
-<div>
+<div
+  className="Search"
+>
   <input
+    className="Search-input"
     onChange={[Function]}
+    placeholder="search product"
     type="search"
     value=""
   />
