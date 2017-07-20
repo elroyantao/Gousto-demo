@@ -7,5 +7,10 @@ export default function (req, reply) {
       if (!res.ok) throw Error(res.statusText)
       return res.json()
     })
-    .then((response) => reply(response))
+    .then((response) => {
+      return reply(response)
+    })
+    .catch((err) => {
+      return reply(new Error(err))
+    })
 }

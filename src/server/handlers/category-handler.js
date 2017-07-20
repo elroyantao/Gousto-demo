@@ -7,4 +7,7 @@ export default function (req, reply) {
       return res.json()
     })
     .then((response) => reply(response))
+    .catch((err) => {
+      return reply(new Error(err))
+    })
 }

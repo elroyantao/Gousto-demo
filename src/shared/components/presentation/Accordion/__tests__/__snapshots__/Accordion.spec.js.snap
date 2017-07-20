@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Accordion /> @renders in default state 1`] = `
+<div
+  className="Accordion"
+>
+  <div
+    className="Accordion-header"
+    onClick={[Function]}
+    style={
+      Object {
+        "cursor": "auto",
+      }
+    }
+  >
+    this is a header
+  </div>
+  <div
+    className="Accordion-wrapper"
+    style={
+      Object {
+        "maxHeight": 0,
+        "overflow": "hidden",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`<Accordion /> @renders when extended height is set and is expanded 1`] = `
+<div
+  className="Accordion"
+>
+  <div
+    className="Accordion-header"
+    onClick={[Function]}
+    style={
+      Object {
+        "cursor": "pointer",
+      }
+    }
+  >
+    this is a header
+  </div>
+  <div
+    className="Accordion-wrapper"
+    style={
+      Object {
+        "maxHeight": 100,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <div
+      className="Accordion-content"
+    >
+      <div>
+        this is a body
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Accordion /> @renders when extended height is set and is not expanded 1`] = `
+<div
+  className="Accordion"
+>
+  <div
+    className="Accordion-header"
+    onClick={[Function]}
+    style={
+      Object {
+        "cursor": "pointer",
+      }
+    }
+  >
+    this is a header
+  </div>
+  <div
+    className="Accordion-wrapper"
+    style={
+      Object {
+        "maxHeight": 0,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <div
+      className="Accordion-content"
+    >
+      <div>
+        this is a body
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Accordion /> @renders with child node 1`] = `
+<div
+  className="Accordion"
+>
+  <div
+    className="Accordion-header"
+    onClick={[Function]}
+    style={
+      Object {
+        "cursor": "pointer",
+      }
+    }
+  >
+    this is a header
+  </div>
+  <div
+    className="Accordion-wrapper"
+    style={
+      Object {
+        "maxHeight": 0,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <div
+      className="Accordion-content"
+    >
+      <div>
+        this is a body
+      </div>
+    </div>
+  </div>
+</div>
+`;

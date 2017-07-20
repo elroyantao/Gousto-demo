@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class Accordion extends Component {
+  static propTypes = {
+    header: PropTypes.string,
+    children: PropTypes.node
+  }
+
   constructor(props) {
     super(props)
     this.state = {
@@ -60,9 +65,4 @@ export default class Accordion extends Component {
       </div>
     )
   }
-}
-
-Accordion.propTypes = {
-  children: PropTypes.node,
-  header: PropTypes.string
 }

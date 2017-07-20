@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<APIError /> @renders in default state 1`] = `null`;
+
+exports[`<APIError /> @renders in error state 1`] = `
+<div
+  className="Overlay"
+>
+  <div
+    className="Modal"
+  >
+    <div
+      className="Modal-content"
+    >
+      There was an error in the api call
+    </div>
+    <div
+      className="Modal-action"
+    >
+      <button
+        className="Modal-button Modal-button--close"
+        onClick={[Function]}
+      >
+        Close
+      </button>
+      <button
+        className="Modal-button Modal-button--reload"
+        onClick={[Function]}
+      >
+        Reload
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -28,6 +28,7 @@ exports[`<MainContainer/> @renders in default state 1`] = `
         path="/category/:categoryId"
       />
     </Switch>
+    <APIError />
   </div>
 </BrowserRouter>
 `;
@@ -49,6 +50,7 @@ exports[`<MainContainer/> @renders when categories is empty 1`] = `
         path="/category/:categoryId"
       />
     </Switch>
+    <APIError />
   </div>
 </BrowserRouter>
 `;

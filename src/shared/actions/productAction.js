@@ -4,9 +4,13 @@ const fetchProductsRequest = () => ({
   type: 'FETCH_PRODUCTS_REQUEST'
 })
 
-const setProducts = (products) => ({
+const fetchProductsResponse = (products) => ({
   type: 'FETCH_PRODUCTS_RESPONSE',
   products
+})
+
+const fetchProductsFailure = () => ({
+  type: 'FETCH_PRODUCTS_FAILURE'
 })
 
 export const fetchProducts = () => (dispatch) => {
@@ -17,6 +21,9 @@ export const fetchProducts = () => (dispatch) => {
     return res.json()
   })
   .then((res) => {
-    dispatch(setProducts(res.data))
+    dispatch(fetchProductsResponse(res.data))
+  })
+  .catch(() => {
+    dispatch(fetchProductsFailure())
   })
 }

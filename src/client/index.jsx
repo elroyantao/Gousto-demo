@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
 
-import App from './App'
+import MainContainer from '../shared/components/containers/MainContainer/MainContainer'
 import { APP_CONTAINER_CLASS } from '../shared/config'
 import configureStore from '../shared/lib/configure-store'
 
@@ -20,12 +20,12 @@ const wrapApp = (AppComponent, reduxStore) => (
 )
 
 
-render(wrapApp(App, store), rootEl)
+render(wrapApp(MainContainer, store), rootEl)
 
 if (module.hot) {
-  module.hot.accept('./App', () => {
+  module.hot.accept('../shared/components/containers/MainContainer/MainContainer', () => {
     // eslint-disable-next-line global-require
-    const NextApp = require('./App').default
+    const NextApp = require('../shared/components/containers/MainContainer/MainContainer').default
     render(wrapApp(NextApp), rootEl)
   })
 }

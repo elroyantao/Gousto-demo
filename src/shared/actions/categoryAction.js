@@ -4,9 +4,13 @@ const fetchCategoriesRequest = () => ({
   type: 'FETCH_CATEGORIES_REQUEST'
 })
 
-const setCategories = (categories) => ({
+const fetchCategoriesResponse = (categories) => ({
   type: 'FETCH_CATEGORIES_RESPONSE',
   categories
+})
+
+const fetchCategoriesFailure = () => ({
+  type: 'FETCH_CATEGORIES_FAILURE'
 })
 
 export const fetchCategories = () => (dispatch) => {
@@ -17,6 +21,9 @@ export const fetchCategories = () => (dispatch) => {
     return res.json()
   })
   .then((res) => {
-    dispatch(setCategories(res.data))
+    dispatch(fetchCategoriesResponse(res.data))
+  })
+  .catch(() => {
+    dispatch(fetchCategoriesFailure())
   })
 }
