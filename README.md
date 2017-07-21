@@ -8,7 +8,7 @@ or
 ```javascript
 npm install
 ```
->
+
 ### Running the application
 #### in development mode
 ```javascript
@@ -42,7 +42,19 @@ npm run prod
 ```javascript
 yarn test
 ```
+
+
 or
 ```javascript
 npm run test
 ```
+### the solition
+* i have used react for rendering 
+* redux for state managment to have a single source of truth
+* react-router for routing 
+* on the backend i have used hapi to connect to the api using a library called 'isomorphic-fetch'
+* for CSS i have used CSSmodules along woth postCSS and CSSnext for future CSS standards
+* i have also folloed BEM naming convention
+* i have tested the files using jest
+* webpack is used as the build tool and webpack-dev-server is used for development along with hot module replacement
+* babel is ised to transpile the es6 and jsx code
