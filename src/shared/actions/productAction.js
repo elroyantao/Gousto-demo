@@ -1,15 +1,15 @@
 import 'isomorphic-fetch'
 
-const fetchProductsRequest = () => ({
+export const fetchProductsRequest = () => ({
   type: 'FETCH_PRODUCTS_REQUEST'
 })
 
-const fetchProductsResponse = (products) => ({
+export const fetchProductsResponse = (products) => ({
   type: 'FETCH_PRODUCTS_RESPONSE',
   products
 })
 
-const fetchProductsFailure = () => ({
+export const fetchProductsFailure = () => ({
   type: 'FETCH_PRODUCTS_FAILURE'
 })
 

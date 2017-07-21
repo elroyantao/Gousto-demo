@@ -1,15 +1,15 @@
 import 'isomorphic-fetch'
 
-const fetchCategoriesRequest = () => ({
+export const fetchCategoriesRequest = () => ({
   type: 'FETCH_CATEGORIES_REQUEST'
 })
 
-const fetchCategoriesResponse = (categories) => ({
+export const fetchCategoriesResponse = (categories) => ({
   type: 'FETCH_CATEGORIES_RESPONSE',
   categories
 })
 
-const fetchCategoriesFailure = () => ({
+export const fetchCategoriesFailure = () => ({
   type: 'FETCH_CATEGORIES_FAILURE'
 })
 

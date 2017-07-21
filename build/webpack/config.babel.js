@@ -1,6 +1,5 @@
 import path from 'path'
 import webpack from 'webpack'
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import postcssNext from 'postcss-cssnext'
 import postcssGray from 'postcss-color-gray'
 
@@ -24,7 +23,6 @@ export default {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
-    // new ExtractTextPlugin('style.css', { allChunks: true })
   ],
   module: {
     rules: [

@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`product actions fetchProducts()  a successful fetch 1`] = `
+Array [
+  Array [
+    Object {
+      "type": "FETCH_PRODUCTS_REQUEST",
+    },
+  ],
+  Array [
+    Object {
+      "products": Array [
+        1,
+        2,
+        3,
+      ],
+      "type": "FETCH_PRODUCTS_RESPONSE",
+    },
+  ],
+]
+`;
+
+exports[`product actions fetchProducts()  an unsuccessful fetch 1`] = `
+Array [
+  Array [
+    Object {
+      "type": "FETCH_PRODUCTS_REQUEST",
+    },
+  ],
+  Array [
+    Object {
+      "type": "FETCH_PRODUCTS_FAILURE",
+    },
+  ],
+]
+`;
+
+exports[`product actions fetchProductsFailure() 1`] = `
+Object {
+  "type": "FETCH_PRODUCTS_FAILURE",
+}
+`;
+
+exports[`product actions fetchProductsRequest() 1`] = `
+Object {
+  "type": "FETCH_PRODUCTS_REQUEST",
+}
+`;
+
+exports[`product actions fetchProductsResponse() 1`] = `
+Object {
+  "products": Array [
+    1,
+    2,
+    3,
+  ],
+  "type": "FETCH_PRODUCTS_RESPONSE",
+}
+`;

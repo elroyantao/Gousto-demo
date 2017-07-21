@@ -23,6 +23,7 @@
 .Accordion-wrapper {
   overflow: hidden;
   font-style: italic;
+  transition: max-height .2s;
 }
 
 .Accordion-content {

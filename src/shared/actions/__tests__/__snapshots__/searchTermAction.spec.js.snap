@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`searchTerm actions clearSearchTerm() 1`] = `
+Object {
+  "type": "CLEAR_SEARCH_TERM",
+}
+`;
+
+exports[`searchTerm actions setSearchTerm() 1`] = `
+Object {
+  "searchTerm": "fake search term",
+  "type": "SET_SEARCH_TERM",
+}
+`;

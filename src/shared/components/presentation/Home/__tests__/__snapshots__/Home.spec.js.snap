@@ -9,7 +9,7 @@ exports[`<Home/> @renders in default state 1`] = `
     title="Gousto - Home"
   />
   <p>
-     Please select a category to continue
+    Please select a category to continue
   </p>
 </div>
 `;

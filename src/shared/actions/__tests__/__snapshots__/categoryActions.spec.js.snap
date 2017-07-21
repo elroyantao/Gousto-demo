@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`category actions fetchCategories()  a successful fetch 1`] = `
+Array [
+  Array [
+    Object {
+      "type": "FETCH_CATEGORIES_REQUEST",
+    },
+  ],
+  Array [
+    Object {
+      "categories": Array [
+        1,
+        2,
+        3,
+      ],
+      "type": "FETCH_CATEGORIES_RESPONSE",
+    },
+  ],
+]
+`;
+
+exports[`category actions fetchCategories()  an unsuccessful fetch 1`] = `
+Array [
+  Array [
+    Object {
+      "type": "FETCH_CATEGORIES_REQUEST",
+    },
+  ],
+  Array [
+    Object {
+      "type": "FETCH_CATEGORIES_FAILURE",
+    },
+  ],
+]
+`;
+
+exports[`category actions fetchCategoriesFailure() 1`] = `
+Object {
+  "type": "FETCH_CATEGORIES_FAILURE",
+}
+`;
+
+exports[`category actions fetchCategoriesRequest() 1`] = `
+Object {
+  "type": "FETCH_CATEGORIES_REQUEST",
+}
+`;
+
+exports[`category actions fetchCategoriesResponse() 1`] = `
+Object {
+  "categories": Array [
+    1,
+    2,
+    3,
+  ],
+  "type": "FETCH_CATEGORIES_RESPONSE",
+}
+`;
