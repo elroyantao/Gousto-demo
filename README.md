@@ -1,9 +1,9 @@
 # Gousto coding exercise
 
 ### Installing the application
-
+```javascript
 yarn install
-
+```
 or
 ```javascript
 npm install
