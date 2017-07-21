@@ -1,29 +1,30 @@
-# README #
+# Gousto coding exercise
 
-This README would normally document whatever steps are necessary to get your application up and running.
+### Installing the application
+> yarn install
 
-### What is this repository for? ###
+or
+> npm install
+>
+### Running the application
+#### in development mode
+> yarn start
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+or
+> npm start
 
-### How do I get set up? ###
+#### in production mode
+* build the file
+> yarn prod:build
+or
+> npm run prod:build
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* run production build
+> yarn prod
+ or
+> npm run prod
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+#### run the tests
+> yarn test
+ or
+> npm run test

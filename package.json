@@ -10,9 +10,10 @@
     "start": "yarn dev:start | yarn dev:wds",
     "dev:start": "nodemon --ignore lib --exec babel-node src",
     "dev:wds": "webpack-dev-server --progress",
-    "prod:build": "babel src -d lib --ignore .spec.js --copy-files && NODE_ENV=production webpack -p --optimize-minimize --progress --config build/webpack/config.babel.js",
+    "prod:build": "yarn lint && babel src -d lib --ignore .spec.js --copy-files && NODE_ENV=production webpack -p --progress --config build/webpack/config.babel.js",
     "prod": "NODE_ENV=production node lib",
-    "test": "jest --coverage",
+    "unit:test": "jest --coverage",
+    "test": "yarn lint && yarn unit:test",
     "lint": "eslint src"
   },
   "devDependencies": {

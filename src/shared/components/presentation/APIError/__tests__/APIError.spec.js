@@ -32,7 +32,7 @@ describe('<APIError />', () => {
       window.location.reload = jest.fn()
 
       it('should call window.location.reload()', () => {
-        const { instance, wrapper } = renderedComponent
+        const { wrapper } = renderedComponent
         expect(window.location.reload).not.toHaveBeenCalled()
         wrapper.find('.Modal-button--reload').simulate('click')
         expect(window.location.reload).toHaveBeenCalledTimes(1)
