@@ -1,30 +1,48 @@
 # Gousto coding exercise
 
 ### Installing the application
-> yarn install
+
+yarn install
 
 or
-> npm install
+```javascript
+npm install
+```
 >
 ### Running the application
 #### in development mode
-> yarn start
-
+```javascript
+yarn start
+```
 or
-> npm start
+```javascript
+npm start
+```
 
 #### in production mode
 * build the file
-> yarn prod:build
+```javascript
+yarn prod:build
+```
 or
-> npm run prod:build
+```javascript
+npm run prod:build
+```
 
 * run production build
-> yarn prod
- or
-> npm run prod
+```javascript
+yarn prod
+```
+or
+```javascript
+npm run prod
+```
 
 #### run the tests
-> yarn test
- or
-> npm run test
+```javascript
+yarn test
+```
+or
+```javascript
+npm run test
+```
