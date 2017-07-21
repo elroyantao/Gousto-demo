@@ -64,3 +64,7 @@ npm run test
 * i have divided the components into 2 
 > - *presentational* they role of these components is to only display the data passed into them by the parent
 > - *containers* are the coponents which contain the presentaional components. they communicate with the server and has the buisness logic. they are commected to the store and pass the props to the presentaional components
+* i have created an accordion component which calculated its rendered height and then uses this height to show the contents when it is opened
+* the main container contains the router and the routes. and based on the selected route either show the home page or the categories page
+* when there is an error in server response a modal is shown asking if you want to reload or just ignore/close the error popup
+
