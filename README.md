@@ -58,3 +58,9 @@ npm run test
 * i have tested the files using jest
 * webpack is used as the build tool and webpack-dev-server is used for development along with hot module replacement
 * babel is ised to transpile the es6 and jsx code
+* also used yarn in place of npm
+
+### components
+* i have divided the components into 2 
+> - *presentational* they role of these components is to only display the data passed into them by the parent
+> - *containers* are the coponents which contain the presentaional components. they communicate with the server and has the buisness logic. they are commected to the store and pass the props to the presentaional components
